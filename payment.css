@@ -2,14 +2,16 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-image:url("https://i.imgur.com/FyadlqO.jpg");
+  background-image: url("https://i.imgur.com/FyadlqO.jpg");
 }
+
 #container {
-	width: 200px;
- 	height: 200px;
- 	overflow: hidden;
-	border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
 }
+
 .img1 {
   border-radius: 2.5em;
 }
