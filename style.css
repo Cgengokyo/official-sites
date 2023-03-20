@@ -1,0 +1,317 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #2e8b57;
+}
+ul {
+  display: flex;
+}
+li {
+  list-style: none;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-right: 35px;
+}
+nav {
+  padding-top: 5px;
+  box-sizing: border-box;
+}
+a:hover {
+  color: rgb(201, 255, 5);
+}
+.copyright {
+  position: relative;
+  border: solid 2px red;
+  display: inline-block;
+  width: 45em;
+  left: 34.3em;
+}
+.cоntainer {
+  background-color: black;
+  position: relative;
+  height: 1.5em;
+  top: 0.2em;
+}
+/* 装飾 */
+button {
+  color: #fff;
+  background: #5876a3;
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+@media screen and (max-width:480px) {
+  * {
+	float: none;
+	position: static;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+}
+
+.invoice {
+  background-color: black;
+}
+
+/*枠デザイン*/
+.profile_box {
+margin: 2em 0;
+background: #dcefff; /*内容の背景色*/
+}
+
+.profile_box .box-title {
+font-size: 18px;
+line-height:1.8;
+background: #5fb3f5; /*タイトルの背景色*/
+padding: 4px;
+text-align: center;
+color: #FFF; /*文字色*/
+font-weight: bold;
+letter-spacing: 0.05em;
+}
+
+/*内容*/
+.profile_center{
+text-align: center;
+margin: 10px 15px 0 0;
+}
+
+/*プロフィール画像*/
+.profile_figure {
+width:150px;
+height:150px;
+border-radius: 50%; /*丸くする*/
+border: solid 3px #5fb3f5; /*枠線*/
+}
+
+/*名前*/
+.profile_name {
+padding: 15px 20px;
+font-weight:bold;
+font-size:16px;
+}
+
+/*自己紹介文*/
+.profile_box p {
+padding: 15px 20px;
+margin: 0;
+}
+
+/*リスト*/
+.profile_box ul {
+padding: 0.5em 1em 0.5em 2.3em;
+position: relative;
+}
+
+.profile_box ul li {
+line-height: 1.5;
+padding: 0.5em 0;
+list-style-type: none!important;
+}
+
+.profile_box ul li:before {
+font-family: "Font Awesome 5 Free";
+content: "";/*アイコンの種類*/
+font-weight:900;
+position: absolute;
+left : 1em;/*左端からのアイコンまでの距離*/
+color: skyblue;/*アイコン色*/
+}
+
+.insta_btn {
+  display: inline-block;
+  text-align: center;/*中央揃え*/
+  color: #2e6ca5;/*文字色*/
+  font-size: 20px;/*文字サイズ*/
+  text-decoration: none;/*下線消す*/
+}
+
+.insta_btn:hover {/*ホバー時*/
+  color:#668ad8;/*文字色*/
+  transition: .5s;/*ゆっくり変化*/
+}
+
+.insta_btn .insta{/*アイコンの背景*/
+  position: relative;/*相対配置*/
+  display: inline-block;
+  width: 50px;/*幅*/
+  height: 50px;/*高さ*/
+  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;/*グラデーション①*/
+  overflow: hidden;/*はみ出た部分を隠す*/
+  border-radius: 13px;/*角丸に*/
+
+}
+.insta_btn .insta:before{/*グラデーションを重ねるため*/
+  content: '';
+  position: absolute;/*絶対配置*/
+  top: 23px;/*ずらす*/
+  left: -18px;/*ずらす*/
+  width: 60px;/*グラデーションカバーの幅*/
+  height: 60px;/*グラデーションカバーの高さ*/
+  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
+  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);/*グラデーション②*/
+}
+
+.insta_btn .fa-instagram {/*アイコン*/
+  color: #FFF;/*白に*/
+  position: relative;/*z-indexを使うため*/
+  z-index: 2;/*グラデーションより前に*/
+  font-size: 35px;/*アイコンサイズ*/
+  line-height: 50px;/*高さと合わせる*/
+
+#instagram {
+width: 10px;
+}
+.text {
+    margin: 16px 0 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.div {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #000000;
+}
+
+#image {
+  width: 1000px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+#container {
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  border-radius: 50%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #f2f2f2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid #dd204e;
+}
+
+.navbar a.active {
+  border-bottom: 3px solid #dd204e;
+}
+
+.menu-item:hover {
+  background-color: #ddd;
+  color: #333;
+  border: 1px solid #333;
+}
+
+/* メニューバーのボタンを押された風にする */
+button:hover {
+  background-color: #cccccc; /* 背景色 */
+  border: 1px solid #000000; /* ボーダー */
+  box-shadow: 2px 2px 2px #888888; /* 影 */
+}
+
+.div2 {
+  margin-top: 5px;
+  padding: 20px;
+  background-color: #000000;
+}
