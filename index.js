@@ -4,28 +4,25 @@ var imageIndex = 0;
 var intervalId;
 
 function changeImage() {
-	image.src = imageArray[imageIndex];
-	imageIndex++;
-	if (imageIndex >= imageArray.length) {
-		imageIndex = 0;
-	}
+  image.src = imageArray[imageIndex];
+  imageIndex++;
+  if (imageIndex >= imageArray.length) {
+    imageIndex = 0;
+  }
 }
 
 function startInterval() {
-	changeImage(); // 最初の画像の表示
-	intervalId = setInterval(changeImage, 5000); // 自動で画像を切り替える
+  changeImage(); // 最初の画像の表示
+  intervalId = setInterval(changeImage, 5000); // 自動で画像を切り替える
 }
 
 function stopInterval() {
-	clearInterval(intervalId);
-	image.src = imageArray[0]; // 最初の画像に戻す
-	imageIndex = 0;
+  clearInterval(intervalId);
+  image.src = imageArray[0]; // 最初の画像に戻す
+  imageIndex = 0;
 }
-
 startInterval(); // ページを読み込んだ直後に画像の自動切り替えを開始する
-
 // ボタンをクリックすると画像の自動切り替えを停止して最初の画像に戻る
-document.getElementById("stopButton").addEventListener("click", function() {
-	stopInterval();
+document.getElementById("stopButton").addEventListener("click", function () {
+  stopInterval();
 });
-
