@@ -131,3 +131,11 @@
   display: inline-block;
   width: 22em;
 }
+
+.copyright1 {
+  position: center;
+  border: solid 2px red;
+  display: inline-block;
+  width: 22.5em;
+  left: 10em;
+}
