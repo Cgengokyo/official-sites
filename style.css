@@ -1,32 +1,3 @@
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  background-color: #2e8b57;
-}
-
-ul {
-  display: flex;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  margin-right: 35px;
-}
-
-nav {
-  padding-top: 5px;
-  box-sizing: border-box;
-}
-
 a:hover {
   color: rgb(201, 255, 5);
 }
@@ -45,7 +16,6 @@ a:hover {
   height: 1.5em;
   top: 0.2em;
 }
-
 
 /* 装飾 */
 
@@ -76,7 +46,6 @@ button {
 
 
 /*枠デザイン*/
-
 .profile_box {
   margin: 2em 0;
   background: #dcefff;
@@ -133,7 +102,6 @@ button {
   margin: 0;
 }
 
-
 /*リスト*/
 
 .profile_box ul {
@@ -159,87 +127,238 @@ button {
   /*アイコン色*/
 }
 
-.insta_btn {
-  display: inline-block;
-  text-align: center;
-  /*中央揃え*/
-  color: #2e6ca5;
-  /*文字色*/
-  font-size: 20px;
-  /*文字サイズ*/
-  text-decoration: none;
-  /*下線消す*/
+
+.text {
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.insta_btn:hover {
-  /*ホバー時*/
-  color: #668ad8;
-  /*文字色*/
-  transition: .5s;
-  /*ゆっくり変化*/
+.div {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #000000;
 }
 
-.insta_btn .insta {
-  /*アイコンの背景*/
-  position: relative;
-  /*相対配置*/
-  display: inline-block;
-  width: 50px;
-  /*幅*/
-  height: 50px;
-  /*高さ*/
-  background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
-  background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
-  /*グラデーション①*/
-  overflow: hidden;
-  /*はみ出た部分を隠す*/
-  border-radius: 13px;
-  /*角丸に*/
+#container
+* {
+  box-sizing: border-box
 }
+  
 
-.insta_btn .insta:before {
-  /*グラデーションを重ねるため*/
-  content: '';
-  position: absolute;
-  /*絶対配置*/
-  top: 23px;
-  /*ずらす*/
-  left: -18px;
-  /*ずらす*/
-  width: 60px;
-  /*グラデーションカバーの幅*/
-  height: 60px;
-  /*グラデーションカバーの高さ*/
-  background: -webkit-radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
-  background: radial-gradient(#ffdb2c 10%, rgba(255, 105, 34, 0.65) 55%, rgba(255, 88, 96, 0) 70%);
-  /*グラデーション②*/
+.div2 {
+  margin-top: 5px;
+  padding: 20px;
+  background-color: #000000;  
 }
+  /* スマートフォン用のスタイル */
+@media screen and (max-width: 480px) {
+  /* ここにスマートフォン用のCSSを記述 */
 
-.insta_btn .fa-instagram {
-  /*アイコン*/
-  color: #FFF;
-  /*白に*/
-  position: relative;
-  /*z-indexを使うため*/
-  z-index: 2;
-  /*グラデーションより前に*/
-  font-size: 35px;
-  /*アイコンサイズ*/
-  line-height: 50px;
-  /*高さと合わせる*/
-  #instagram {
-    width: 10px;
+  .test {
+    font-size: 2em;
   }
-  .text {
-    margin: 16px 0 0;
-    font-size: 16px;
-    line-height: 1.5;
+
+  .test1 {
+    font-size: 2em;
   }
-  .div {
-    margin-top: 10px;
-    padding: 20px;
-    background-color: #000000;
+
+  .test2 {
+    font-size: 3em;
   }
+
+  .test3 {
+    font-size: 0.8em;
+  }
+
+  .test4 {
+    font-size: 0.54em;
+  }
+
+  .test5 {
+    font-size: 0.8em;
+  }
+
+  table {
+    font-size: 0.415em; /* テーブルの文字サイズを0.415emに変更 */
+    width: 60%; /* テーブルの幅を60%に変更 */
+  }
+
+  iframe {
+    width: 360px;
+    height: 300px;
+  }
+
+  .test6 {
+    font-size: 0.47em;
+    text-align: center; /* 親要素に対してtext-align: center;を適用 */
+  }
+
+  .copyright {
+    text-align: center; /* コピーライトを中央に配置する */
+    position: relative;
+    border: solid 2px red;
+    display: inline-block;
+    width: 21.7em;
+    height: 5.5em;
+    left: 0.1em;
+  }
+  
+  .copyright font {
+    font-size: 0.9rem; /* コピーライトのフォントサイズを0.9remに変更 */
+  }
+
+  .test8 {
+    position: relative;
+    left: 0.01em;
+  }
+  
+  .test9 {
+    position: relative;
+    left: 0.005em;
+  }
+
+  .menu li {
+    white-space: nowrap; /* テキストを折り返さないようにする */
+    font-size: 0.6em;
+    display: inline-block;
+    margin-right: 10px; /* メニュー項目間の右側のマージンを10pxに指定 */
+  }
+
+  .menu li:last-child {
+    margin-right: 0; /* 最後のメニュー項目には右側のマージンを適用しない */
+  }
+
+  .menu {
+    width: 100%;
+    background-color: 	#2E8B57;
+    overflow: hidden;
+  }
+  
+  .menu ul {
+    display: table-row;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: #2e8b57;
+  }
+  
+  ul {
+    margin: 0; /* リストの余白を削除する */
+    list-style: none;
+    display: flex;
+  }
+  
+  li {
+    margin-right: 20px
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+    text-decoration: none;
+  }
+  
+  nav {
+    padding-top: 5px;
+    box-sizing: border-box;
+  }
+
+ 
+
+}
+
+/* PC用のスタイル */
+@media screen and (min-width: 769px) {
+  /* ここにPC用のCSSを記述 */
+  .test {
+    font-size: 3em;
+  }
+
+  .test1 {
+    font-size: 3em;
+  }
+
+  .test2 {
+    font-size: 5em;
+  }
+
+  .test3 {
+    font-size: 0.8em;
+  }
+
+  .test4 {
+    font-size: 0.5em;
+  }
+
+  .test5 {
+    font-size: 0.8em;
+  }
+
+  iframe {
+    width: 650px;
+    height: 550px;
+  }
+
+  table {
+    font-size: 0.7em; /* テーブルの文字サイズを0.415emに変更 */
+    width: 60%; /* テーブルの幅を60%に変更 */
+    height: 60%;
+  }
+
+  .test6 {
+    font-size: 0.65em;
+  }
+  
+  .div3 {
+    font-size: 0.65em;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: #2e8b57;
+  }
+  
+  ul {
+    display: flex;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-right: 35px;
+  }
+  
+  nav {
+    padding-top: 5px;
+    box-sizing: border-box;
+  }
+
+  .div3 {
+    font-size: 3em;
+  }
+  
+
+  }
+
+{
+ 
   #image {
     width: 1000px;
     height: 500px;
@@ -249,21 +368,20 @@ button {
     transform: translate(-50%, -50%);
     border-radius: 10px;
   }
-  #container {}
-  * {
-    box-sizing: border-box
-  }
+
   /* Slideshow container */
   .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
   }
+
   /* Hide the images by default */
   .mySlides {
     display: none;
     border-radius: 50%;
   }
+
   /* Next & previous buttons */
   .prev, .next {
     cursor: pointer;
@@ -279,15 +397,18 @@ button {
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
+
   /* Position the "next button" to the right */
   .next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
+
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
+
   /* Caption text */
   .text {
     color: #f2f2f2;
@@ -298,6 +419,7 @@ button {
     width: 100%;
     text-align: center;
   }
+
   /* Number text (1/4 etc) */
   .numbertext {
     color: #f2f2f2;
@@ -306,12 +428,14 @@ button {
     position: absolute;
     top: 0;
   }
+
   /* The dots/bullets/indicators */
   .dot {
     cursor: pointer;
     height: 15px;
     width: 15px
   }
+
   .navbar {
     overflow: hidden;
     background-color: #f2f2f2;
@@ -320,6 +444,7 @@ button {
     width: 100%;
     z-index: 1;
   }
+
   .navbar a {
     float: left;
     display: block;
@@ -330,28 +455,12 @@ button {
     font-size: 17px;
     border-bottom: 3px solid transparent;
   }
+
   .navbar a:hover {
     border-bottom: 3px solid #dd204e;
   }
+
   .navbar a.active {
     border-bottom: 3px solid #dd204e;
   }
-  .menu-item:hover {
-    background-color: #ddd;
-    color: #333;
-    border: 1px solid #333;
-  }
-  /* メニューバーのボタンを押された風にする */
-  button:hover {
-    background-color: #cccccc;
-    /* 背景色 */
-    border: 1px solid #000000;
-    /* ボーダー */
-    box-shadow: 2px 2px 2px #888888;
-    /* 影 */
-  }
-  .div2 {
-    margin-top: 5px;
-    padding: 20px;
-    background-color: #000000;
-  }
+
