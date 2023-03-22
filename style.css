@@ -1,4 +1,4 @@
-  a:hover {
+a:hover {
   color: rgb(201, 255, 5);
 }
 
@@ -16,7 +16,6 @@
   height: 1.5em;
   top: 0.2em;
 }
-
 
 /* 装飾 */
 
@@ -47,7 +46,6 @@ button {
 
 
 /*枠デザイン*/
-
 .profile_box {
   margin: 2em 0;
   background: #dcefff;
@@ -104,7 +102,6 @@ button {
   margin: 0;
 }
 
-
 /*リスト*/
 
 .profile_box ul {
@@ -130,6 +127,7 @@ button {
   /*アイコン色*/
 }
 
+
 .text {
   margin: 16px 0 0;
   font-size: 16px;
@@ -142,57 +140,62 @@ button {
   background-color: #000000;
 }
 
-#container * {
+#container
+* {
   box-sizing: border-box
 }
+  
 
 .div2 {
   margin-top: 5px;
   padding: 20px;
-  background-color: #000000;
+  background-color: #000000;  
 }
-
-
-/* スマートフォン用のスタイル */
-
+  /* スマートフォン用のスタイル */
 @media screen and (max-width: 480px) {
   /* ここにスマートフォン用のCSSを記述 */
+
   .test {
     font-size: 2em;
   }
+
   .test1 {
     font-size: 2em;
   }
+
   .test2 {
     font-size: 3em;
   }
+
   .test3 {
     font-size: 0.8em;
   }
+
   .test4 {
     font-size: 0.54em;
   }
+
   .test5 {
     font-size: 0.8em;
   }
+
   table {
-    font-size: 0.415em;
-    /* テーブルの文字サイズを0.415emに変更 */
-    width: 60%;
-    /* テーブルの幅を60%に変更 */
+    font-size: 0.415em; /* テーブルの文字サイズを0.415emに変更 */
+    width: 60%; /* テーブルの幅を60%に変更 */
   }
+
   iframe {
     width: 360px;
     height: 300px;
   }
+
   .test6 {
     font-size: 0.47em;
-    text-align: center;
-    /* 親要素に対してtext-align: center;を適用 */
+    text-align: center; /* 親要素に対してtext-align: center;を適用 */
   }
+
   .copyright {
-    text-align: center;
-    /* コピーライトを中央に配置する */
+    text-align: center; /* コピーライトを中央に配置する */
     position: relative;
     border: solid 2px red;
     display: inline-block;
@@ -200,38 +203,42 @@ button {
     height: 5.5em;
     left: 0.1em;
   }
+  
   .copyright font {
-    font-size: 0.9rem;
-    /* コピーライトのフォントサイズを0.9remに変更 */
+    font-size: 0.9rem; /* コピーライトのフォントサイズを0.9remに変更 */
   }
+
   .test8 {
     position: relative;
     left: 0.01em;
   }
+  
   .test9 {
     position: relative;
     left: 0.005em;
   }
+
   .menu li {
-    white-space: nowrap;
-    /* テキストを折り返さないようにする */
-    font-size: 0.6em;
+    white-space: nowrap; /* テキストを折り返さないようにする */
+    font-size: 0.853em;
     display: inline-block;
-    margin-right: 10px;
-    /* メニュー項目間の右側のマージンを10pxに指定 */
+    margin-right: 5px; /* メニュー項目間の右側のマージンを10pxに指定 */
   }
+
   .menu li:last-child {
-    margin-right: 0;
-    /* 最後のメニュー項目には右側のマージンを適用しない */
+    margin-right: 0; /* 最後のメニュー項目には右側のマージンを適用しない */
   }
+
   .menu {
     width: 100%;
-    background-color: #2E8B57;
+    background-color: 	#2E8B57;
     overflow: hidden;
   }
+  
   .menu ul {
     display: table-row;
   }
+  
   nav {
     display: flex;
     justify-content: space-between;
@@ -240,68 +247,80 @@ button {
     height: 70px;
     background-color: #2e8b57;
   }
+  
   ul {
-    margin: 0;
-    /* リストの余白を削除する */
+    margin: 0; /* リストの余白を削除する */
     list-style: none;
     display: flex;
   }
+  
   li {
     margin-right: 20px
   }
+  
   a {
     display: block;
     text-decoration: none;
     color: white;
-    margin-right: 35px;
+    margin-right: 20px;
     text-decoration: none;
   }
+  
   nav {
     padding-top: 5px;
     box-sizing: border-box;
   }
+
+ 
+
 }
 
-
 /* PC用のスタイル */
-
 @media screen and (min-width: 769px) {
   /* ここにPC用のCSSを記述 */
   .test {
     font-size: 3em;
   }
+
   .test1 {
     font-size: 3em;
   }
+
   .test2 {
     font-size: 5em;
   }
+
   .test3 {
     font-size: 0.8em;
   }
+
   .test4 {
     font-size: 0.5em;
   }
+
   .test5 {
     font-size: 0.8em;
   }
+
   iframe {
     width: 650px;
     height: 550px;
   }
+
   table {
-    font-size: 0.7em;
-    /* テーブルの文字サイズを0.415emに変更 */
-    width: 60%;
-    /* テーブルの幅を60%に変更 */
+    font-size: 0.7em; /* テーブルの文字サイズを0.415emに変更 */
+    width: 60%; /* テーブルの幅を60%に変更 */
     height: 60%;
   }
+
   .test6 {
     font-size: 0.65em;
   }
+  
   .div3 {
     font-size: 0.65em;
   }
+
   nav {
     display: flex;
     justify-content: space-between;
@@ -310,28 +329,36 @@ button {
     height: 70px;
     background-color: #2e8b57;
   }
+  
   ul {
     display: flex;
   }
+  
   li {
     list-style: none;
   }
+  
   a {
     display: block;
     text-decoration: none;
     color: white;
     margin-right: 35px;
   }
+  
   nav {
     padding-top: 5px;
     box-sizing: border-box;
   }
+
   .div3 {
     font-size: 3em;
   }
-}
+  
+
+  }
 
 {
+ 
   #image {
     width: 1000px;
     height: 500px;
@@ -341,17 +368,20 @@ button {
     transform: translate(-50%, -50%);
     border-radius: 10px;
   }
+
   /* Slideshow container */
   .slideshow-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
   }
+
   /* Hide the images by default */
   .mySlides {
     display: none;
     border-radius: 50%;
   }
+
   /* Next & previous buttons */
   .prev, .next {
     cursor: pointer;
@@ -367,15 +397,18 @@ button {
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
+
   /* Position the "next button" to the right */
   .next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
+
   /* On hover, add a black background color with a little bit see-through */
   .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
   }
+
   /* Caption text */
   .text {
     color: #f2f2f2;
@@ -386,6 +419,7 @@ button {
     width: 100%;
     text-align: center;
   }
+
   /* Number text (1/4 etc) */
   .numbertext {
     color: #f2f2f2;
@@ -394,12 +428,14 @@ button {
     position: absolute;
     top: 0;
   }
+
   /* The dots/bullets/indicators */
   .dot {
     cursor: pointer;
     height: 15px;
     width: 15px
   }
+
   .navbar {
     overflow: hidden;
     background-color: #f2f2f2;
@@ -408,6 +444,7 @@ button {
     width: 100%;
     z-index: 1;
   }
+
   .navbar a {
     float: left;
     display: block;
@@ -418,9 +455,12 @@ button {
     font-size: 17px;
     border-bottom: 3px solid transparent;
   }
+
   .navbar a:hover {
     border-bottom: 3px solid #dd204e;
   }
+
   .navbar a.active {
     border-bottom: 3px solid #dd204e;
   }
+
