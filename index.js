@@ -22,24 +22,24 @@ function stopInterval() {
   imageIndex = 0;
 }
 startInterval(); // ページを読み込んだ直後に画像の自動切り替えを開始する
-// ボタンをクリックすると画像の自動切り替えを停止して最初の画像に戻る
-document.getElementById("stopButton").addEventListener("click", function () {
-  stopInterval();
-});
-$(function () {
-  $('.hamburger').click(function () {
-    $(this).toggleClass('active');
-    if ($(this).hasClass('active')) {
-      $('.globalMenuSp').addClass('active');
-    } else {
-      $('.globalMenuSp').removeClass('active');
-    }
+
+$(function() {
+  $('.hamburger').click(function() {
+      $(this).toggleClass('active');
+
+      if ($(this).hasClass('active')) {
+          $('.globalMenuSp').addClass('active');
+      } else {
+          $('.globalMenuSp').removeClass('active');
+      } 
+    
   });
 });
 //メニュー内を閉じておく
-$(function () {
-  $('.globalMenuSp a[href]').click(function () {
-    $('.globalMenuSp').removeClass('active');
-    $('.hamburger').removeClass('active');
+$(function() {
+  $('.globalMenuSp a[href]').click(function() {
+      $('.globalMenuSp').removeClass('active');
+     $('.hamburger').removeClass('active');
+
   });
 });
