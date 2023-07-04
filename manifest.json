@@ -1,0 +1,30 @@
+{
+  "background_color": "#ffffff",
+  "description": "Test",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "cgengokyo.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "cgengokyo.github",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [
+    "education"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "https://i.imgur.com/z54eEqZ.png",
+      "type": "image/png",
+      "sizes": "14x16"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Cgengokyo Official-Site",
+      "url": "http://bit.ly/3D0OUng",
+      "description": "Test"
+    }
+  ]
+}
