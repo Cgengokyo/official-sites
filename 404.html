@@ -1,63 +1,86 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
-  <head>
-  <link rel="icon" sizes="16x16" href="https://i.imgur.com/z54eEqZ.png">
+<head>
+    <link rel="icon" sizes="16x16" href="https://i.imgur.com/z54eEqZ.png">
     <meta charset="UTF-8">
     <title>404 Not Found</title>
     <style>
-      h1 {
-        font-size: 48px;
-        margin-bottom: 20px;
-      }
-    </style>
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <link rel="stylesheet" href="style.css">
-     <style>
-        body {
-            font-family: "MS Mincho", serif; /* 明朝体のフォントファミリーを指定 */
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        /* 新しいCSSルールを追加して、パスの文字色を変更 */
+        #path-text {
+            animation: rainbowText 0.7s infinite;
+        }
+        @keyframes rainbowText {
+            0% {
+                color: blue;
+            }
+            14% {
+                color: red;
+            }
+            28% {
+                color: yellow;
+            }
+            42% {
+                color: green;
+            }
+            57% {
+                color: purple;
+            }
+            71% {
+                color: orange;
+            }
+            85% {
+                color: indigo;
+            }
+            100% {
+                color: blue;
+            }
         }
     </style>
-  </head>
-    <body bgcolor="black">
-        <nav class="menu">
-            <ul>
-              <!-- "target="_blank"は無効 -->
-              <li><a href="index.html " target="">ホーム</a></li>
-              <li><a href="overview.html">概要</a></li>
-              <li><a href="notification.html" target="">お知らせ</a></li>
-              <li><a href="aboutus.html" target="">歴史</a></li>
-              <li><a href="shop.html" target="">ショップ</a></li>
-              <li><a href="inquiry.html" target="">お問い合わせ</a></li>
-            </ul>
-          </nav>
-        <font color="white">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body bgcolor="black">
+<nav class="menu">
+    <ul>
+        <!-- "target="_blank"は無効 -->
+        <li><a href="index.html " target="">ホーム</a></li>
+        <li><a href="overview.html">概要</a></li>
+        <li><a href="notification.html" target="">お知らせ</a></li>
+        <li><a href="aboutus.html" target="">歴史</a></li>
+        <li><a href="shop.html" target="">ショップ</a></li>
+        <li><a href="inquiry.html" target="">お問い合わせ</a></li>
+    </ul>
+</nav>
+<font color="white">
     <h1 style="text-align:center">404 Not Found</h1>
-    <div style="text-align:center">
-     <div id="error-message"></div>
+    <br>
+    <div id="error-message"></div>
 
     <script>
         // ページのURLを取得
         var currentURL = window.location.href;
 
-        // カスタム404エラーメッセージを作成
-        var errorMessage = '<h1>The requested URL ' + currentURL + ' was not found on this server.</h1>';
+        // URLからパス部分を抽出
+        var path = new URL(currentURL).pathname;
 
-        // メッセージを表示する要素に挿入
-        document.getElementById('error-message').innerHTML = errorMessage;
+        // パスの文字色を変更する要素にIDを追加
+        var pathElement = document.getElementById('error-message');
+        pathElement.innerHTML = '<font face="ＭＳ Ｐ明朝"><h2 style="text-align:center">The requested URL </font><font face="ＭＳ Ｐ明朝" id="path-text">' + path + '</font><font face="ＭＳ Ｐ明朝"> was not found on this server.</font></h2>';
     </script>
-      <!-- スペースを作る -->
-  <div class="div3">
-    <footer>
-      <font>ㅤ</font>
-  </footer>
-</div>
+
+    <br>
+    <br>
     <div class="copyright" style="padding: 1px; border: 3px solid #333333; border-radius: 10px;"
-    align="center">
-    <footer>
-      <h2 style="text-align:center">
-        <font color="white">
-          <font face="ＭＳ Ｐ明朝">Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</h2>
-    </footer>
-  </div>
-  </body>
+         align="center">
+        <footer>
+            <h2 style="text-align:center">
+                <font color="white">
+                    <font face="ＭＳ Ｐ明朝">Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</h2>
+        </footer>
+    </div>
+</body>
 </html>
