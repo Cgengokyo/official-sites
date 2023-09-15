@@ -92,8 +92,26 @@
 
 #progressBar::-webkit-progress-value {
   background-color: red;
+  border-radius: 10px;
   /* 赤 */
 }
+
+/* プログレスバーのスタイル */
+.progress-bar {
+  width: 100%; /* プログレスバーの幅 */
+  height: 20px; /* プログレスバーの高さ */
+  background-color: #000000; /* プログレスバーの背景色 */
+  border-radius: 10px; /* 丸い角 */
+}
+
+/* プログレスバーの進捗部分のスタイル */
+.progress {
+  width: 50%; /* 進捗部分の幅 */
+  height: 100%; /* プログレスバーの高さと一致 */
+  background-color: white; /* 進捗部分の背景色 */
+  border-radius: 8px; /* 丸い角 */
+}
+
 
 #progressbar {
   width: 100%;
@@ -138,4 +156,63 @@
   display: inline-block;
   width: 22.5em;
   left: 10em;
+}
+
+table {
+  font-size: 0.9em; /* テーブルの文字サイズを0.415emに変更 */
+  width: 40%; /* テーブルの幅を60%に変更 */
+  height: 60%;
+}
+
+.menu li {
+  white-space: nowrap; /* テキストを折り返さないようにする */
+  font-size: 0.853em;
+  display: inline-block;
+  margin-right: 5px; /* メニュー項目間の右側のマージンを10pxに指定 */
+}
+
+.menu li:last-child {
+  margin-right: 0; /* 最後のメニュー項目には右側のマージンを適用しない */
+}
+
+.menu {
+  width: 100%;
+  background-color: 	#2E8B57;
+  overflow: hidden;
+}
+
+.menu ul {
+  display: table-row;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #2e8b57;
+}
+
+ul {
+  margin: 0; /* リストの余白を削除する */
+  list-style: none;
+  display: flex;
+}
+
+li {
+  margin-right: 20px
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+nav {
+  padding-top: 5px;
+  box-sizing: border-box;
 }
