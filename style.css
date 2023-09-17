@@ -270,10 +270,8 @@ button {
     padding-top: 5px;
     box-sizing: border-box;
   }
-
- 
-
-}
+  
+  }
 
 /* PC用のスタイル */
 @media screen and (min-width: 769px) {
@@ -287,11 +285,11 @@ button {
   }
 
   .test2 {
-    font-size: 5em;
+    font-size: 4em;
   }
 
   .test3 {
-    font-size: 0.8em;
+    font-size: 0.6em;
   }
 
   .test4 {
@@ -299,7 +297,7 @@ button {
   }
 
   .test5 {
-    font-size: 0.6em;
+    font-size: 0.4em;
   }
 
   iframe {
@@ -308,8 +306,8 @@ button {
   }
 
   table {
-    font-size: 0.7em; /* テーブルの文字サイズを0.415emに変更 */
-    width: 60%; /* テーブルの幅を60%に変更 */
+    font-size: 0.5em; /* テーブルの文字サイズを0.415emに変更 */
+    width: 40%; /* テーブルの幅を60%に変更 */
     height: 60%;
   }
 
