@@ -322,6 +322,15 @@ button {
     font-size: 0.4em;
   }
 
+  .test7 {
+    white-space: nowrap;
+  }
+
+  .test10 {
+    white-space: nowrap;
+  }
+  
+
   iframe {
     width: 650px;
     height: 550px;
