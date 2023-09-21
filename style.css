@@ -2,6 +2,11 @@ a:hover {
   color: rgb(201, 255, 5);
 }
 
+
+.pc-only {
+  display: none; /* 既定では非表示にする */
+}
+
 .copyright {
   position: relative;
   border: solid 2px red;
@@ -152,9 +157,17 @@ button {
   background-color: #000000;  
 }
   /* スマートフォン用のスタイル */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 850px) {
   /* ここにスマートフォン用のCSSを記述 */
 
+  #image {
+    width: 90%;
+    /* または高さを指定してアスペクト比を維持する場合：
+    max-width: 80%;
+    height: auto;
+    */
+  }
+  
   .test {
     font-size: 2em;
   }
@@ -168,21 +181,21 @@ button {
   }
 
   .test3 {
-    font-size: 0.8em;
+    font-size: 0.6em;
   }
 
   .test4 {
-    font-size: 0.54em;
+    font-size: 0.5em;
   }
 
   .test5 {
     font-size: 0.8em;
   }
 
-  table {
-    font-size: 0.415em; /* テーブルの文字サイズを0.415emに変更 */
-    width: 60%; /* テーブルの幅を60%に変更 */
-  }
+  .table table {
+    font-size: 0.36em;
+    width: 10%;
+  }  
 
   iframe {
     width: 360px;
@@ -194,18 +207,23 @@ button {
     text-align: center; /* 親要素に対してtext-align: center;を適用 */
   }
 
+  .test7 {
+    font-size: 1em;
+    text-align: center; /* 親要素に対してtext-align: center;を適用 */
+  }
+
   .copyright {
     text-align: center; /* コピーライトを中央に配置する */
     position: relative;
     border: solid 2px red;
     display: inline-block;
-    width: 21.7em;
+    width: 21em;
     height: 5.5em;
     left: 0.1em;
   }
   
   .copyright font {
-    font-size: 0.9rem; /* コピーライトのフォントサイズを0.9remに変更 */
+    font-size: 0.9em; /* コピーライトのフォントサイズを0.9remに変更 */
   }
 
   .test8 {
@@ -230,7 +248,7 @@ button {
   }
 
   .menu {
-    width: 100%;
+    width: 95%;
     background-color: 	#2E8B57;
     overflow: hidden;
   }
@@ -275,7 +293,11 @@ button {
 
 /* PC用のスタイル */
 @media screen and (min-width: 769px) {
-  /* ここにPC用のCSSを記述 */
+
+  .pc-only {
+    display: block; /* pcの場合に表示する */
+  }
+
   .test {
     font-size: 3em;
   }
