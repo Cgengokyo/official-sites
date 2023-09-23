@@ -43,3 +43,9 @@ $(function() {
 
   });
 });
+
+// ×ボタンをクリックしたときの処理
+document.querySelector(".close-button").addEventListener("click", function() {
+  // language-box を非表示にする
+  document.querySelector(".language-box").style.display = "none";
+});
