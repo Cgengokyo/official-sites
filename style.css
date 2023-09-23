@@ -156,6 +156,52 @@ button {
   padding: 20px;
   background-color: #000000;  
 }
+
+.language-box {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  background-color: #333; /* 背景色を灰色に設定 */
+  color: #fff; /* テキストの色を白に設定 */
+  padding: 10px; /* 内側の余白を設定 */
+  z-index: 999; /* 他の要素の上に表示 */
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.language {
+  padding: 5px;
+  font-size: 15px;
+  -webkit-font-smoothing:auto
+}
+
+.secondary-button {
+  background-color: #ccc;
+  color: #333;
+  text-decoration: none;
+  padding: 3px 1px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  width: 10em;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #f00; /* ホバー時に色を変更 */
+}
+
   /* スマートフォン用のスタイル */
 @media screen and (max-width: 850px) {
   /* ここにスマートフォン用のCSSを記述 */
