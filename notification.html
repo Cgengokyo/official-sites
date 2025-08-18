@@ -9,184 +9,187 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://i.imgur.com/z54eEqZ.png">
   <style>
-  :root {
-                --bg-color: #0a0a1a;
-                --primary-color: #00ffff; /* Cyan */
-                --secondary-color: #ff00ff; /* Magenta */
-                --text-color: #e0e0e0;
-                --card-bg: #1a1a2e;
-                --border-color: #3a3a5e;
-                --font-heading: 'Orbitron', sans-serif;
-                --font-body: 'Noto Sans JP', sans-serif;
-            }
-    
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-    
-            body {
-                font-family: var(--font-body);
-                background-color: var(--bg-color);
-                color: var(--text-color);
-                line-height: 1.6;
-                padding-top: 80px; /* For fixed header */
-            }
-    
-            .container {
-                max-width: 900px;
-                margin: 40px auto;
-                padding: 0 20px;
-            }
-    
-            h2 {
-                font-family: var(--font-heading);
-                color: var(--primary-color);
-                text-shadow: 0 0 5px var(--primary-color);
-                font-size: 2.5rem;
-                text-align: center;
-                margin-bottom: 2.5rem;
-            }
-            
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-    
-            .header {
-                background-color: rgba(10, 10, 26, 0.8);
-                backdrop-filter: blur(10px);
-                padding: 1rem 0;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 100;
-                border-bottom: 1px solid var(--border-color);
-            }
-    
-            .header .container-nav {
-                max-width: 1120px;
-                margin: 0 auto;
-                padding: 0 20px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-    
-            .logo {
-                font-size: 1.8rem;
-                font-weight: 700;
-                font-family: var(--font-heading);
-            }
-    
-            .logo a {
-                color: var(--primary-color);
-                text-decoration: none;
-                text-shadow: 0 0 5px var(--primary-color);
-            }
-    
-            .nav ul {
-                list-style: none;
-                display: flex;
-            }
-    
-            .nav ul li {
-                margin-left: 25px;
-            }
-    
-            .nav a {
-                color: var(--text-color);
-                font-weight: 700;
-                padding: 5px 10px;
-                border-radius: 5px;
-                transition: background-color 0.3s, color 0.3s;
-            }
-    
-            .nav a:hover {
-                background-color: var(--primary-color);
-                color: var(--bg-color);
-                text-shadow: none;
-            }
-    
-            .news-list {
-                list-style: none;
-                background-color: var(--card-bg);
-                border-radius: 10px;
-                border: 1px solid var(--border-color);
-                padding: 1rem;
-                box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-            }
-    
-            .news-item a {
-                display: flex;
-                align-items: center;
-                padding: 1.5rem 1rem;
-                border-bottom: 1px solid var(--border-color);
-                transition: background-color 0.3s ease;
-                border-radius: 5px;
-            }
-            
-            .news-list li:last-child a {
-                border-bottom: none;
-            }
-    
-            .news-item a:hover {
-                background-color: rgba(0, 255, 255, 0.05);
-            }
-    
-            .news-item .date {
-                font-family: var(--font-heading);
-                color: var(--text-color);
-                opacity: 0.7;
-                font-size: 0.9rem;
-                width: 120px;
-                flex-shrink: 0;
-            }
-    
-            .news-item .category {
-                background-color: var(--secondary-color);
-                color: var(--bg-color);
-                font-size: 0.8rem;
-                font-weight: 700;
-                padding: 4px 12px;
-                border-radius: 20px;
-                margin-right: 1.5rem;
-                flex-shrink: 0;
-            }
-    
-            .news-item .title {
-                color: var(--text-color);
-                font-weight: 500;
-            }
-            
-            .news-item a:hover .title {
-                color: var(--primary-color);
-            }
-    
-            .footer {
-                background-color: var(--bg-color);
-                text-align: center;
-                padding: 2rem 0;
-                margin-top: 80px;
-                border-top: 1px solid var(--border-color);
-                font-size: 0.9rem;
-            }
-            
-            @media (max-width: 768px) {
-                .news-item a {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 0.75rem;
-                }
-                .news-item .date {
-                    width: auto;
-                }
-                .news-item .category {
-                    margin-right: 0;
-                }
-            }
+    :root {
+      --bg-color: #0a0a1a;
+      --primary-color: #00ffff; /* Cyan */
+      --secondary-color: #ff00ff; /* Magenta */
+      --text-color: #e0e0e0;
+      --card-bg: #1a1a2e;
+      --border-color: #3a3a5e;
+      --font-heading: 'Orbitron', sans-serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-top: 80px; /* For fixed header */
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      color: var(--primary-color);
+      text-shadow: 0 0 5px var(--primary-color);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header {
+      background-color: rgba(10, 10, 26, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header .container-nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+    }
+
+    .logo a {
+      color: var(--primary-color);
+      text-decoration: none;
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav ul li {
+      margin-left: 25px;
+    }
+
+    .nav a {
+      color: var(--text-color);
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none; /* 下線を削除 */
+    }
+
+    .nav a:hover {
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+      text-shadow: none;
+    }
+
+    .news-list {
+      list-style: none;
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+
+    .news-item a {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .news-list li:last-child a {
+      border-bottom: none;
+    }
+
+    .news-item a:hover {
+      background-color: rgba(0, 255, 255, 0.05);
+    }
+
+    .news-item .date {
+      font-family: var(--font-heading);
+      color: var(--text-color);
+      opacity: 0.7;
+      font-size: 0.9rem;
+      width: 150px;
+      flex-shrink: 0;
+    }
+
+    .news-item .category {
+      background-color: var(--secondary-color);
+      color: var(--bg-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .news-item .title {
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    .news-item a:hover .title {
+      color: var(--primary-color);
+    }
+
+    .footer {
+      background-color: var(--bg-color);
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 80px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .news-item a {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .news-item .date {
+        width: auto;
+      }
+
+      .news-item .category {
+        margin-right: 0;
+      }
+    }
   </style>
 </head>
 <body>
@@ -197,18 +200,10 @@
       </h1>
       <nav class="nav">
         <ul>
-          <li>
-            <a href="index.html#home">ホーム</a>
-          </li>
-          <li>
-            <a href="index.html#about">概要</a>
-          </li>
-          <li>
-            <a href="index.html#sdgs">歴史</a>
-          </li>
-          <li>
-            <a href="index.html#contact">お問い合わせ</a>
-          </li>
+          <li><a href="index.html#home">ホーム</a></li>
+          <li><a href="index.html#about">概要</a></li>
+          <li><a href="index.html#sdgs">歴史</a></li>
+          <li><a href="index.html#contact">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
@@ -216,6 +211,16 @@
   <main class="container">
     <h2>お知らせ一覧</h2>
     <ul class="news-list">
+      <!-- 新しい記事を一番上に追加 -->
+      <li class="news-item">
+        <a href="index.html">
+          <p class="date">2025/08/18</p>
+          <p class="category">
+            <span>お知らせ</span>
+          </p>
+          <p class="title">サイトをリニューアルしました！現在、一部改装中です。</p>
+        </a>
+      </li>
       <li class="news-item">
         <a href="https://www.instagram.com/cgengokyo/" target="_blank" rel="noopener noreferrer">
           <p class="date">2020/08/03</p>
