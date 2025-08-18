@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>利用規約 - C言語教</title>
+  <link rel="icon" href="https://i.imgur.com/z54eEqZ.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0a0a1a;
+      --primary-color: #00ffff;
+      --secondary-color: #ff00ff;
+      --text-color: #e0e0e0;
+      --card-bg: #1a1a2e;
+      --border-color: #3a3a5e;
+      --font-heading: 'Orbitron', sans-serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-top: 80px; /* fixed header */
+    }
+
+    .header {
+      background-color: rgba(10,10,26,0.8);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    .container-nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .logo a {
+      color: var(--primary-color);
+      text-decoration: none;
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav ul li {
+      margin-left: 25px;
+    }
+
+    .nav a {
+      color: var(--text-color);
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+      text-shadow: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2 {
+      font-family: var(--font-heading);
+      margin-bottom: 1rem;
+    }
+
+    h1.section-title {
+      color: var(--primary-color);
+      text-shadow: 0 0 5px var(--primary-color);
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+
+    .section-content p {
+      color: var(--text-color);
+      font-size: 1rem;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .important {
+      color: var(--secondary-color);
+      font-weight: 700;
+    }
+
+    .footer {
+      background-color: var(--bg-color);
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 80px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      alert("本ページの内容は完全に架空のものであり、実在の人物、場所、\nもしくは団体などを表現や描写する意図はありません。\n類似が存在した場合はすべて偶然性に起因するものととなります。\nC言語教が、このページ(もしくは関連のもの)で記載された行為を\n支持、許容、奨励するものでは一切ございません。");
+    }
+  </script>
+</head>
+<body>
+  <header class="header">
+    <div class="container-nav">
+      <h1 class="logo">
+        <a href="index.html">C言語教</a>
+      </h1>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="notification.html">お知らせ</a></li>
+          <li><a href="aboutus.html">歴史</a></li>
+          <li><a href="shop.html">ショップ</a></li>
+          <li><a href="inquiry.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    <h1 class="section-title">利用規約</h1>
+    <h2 class="section-title important">1. 意図 / 目的</h2>
+    <div class="section-content">
+      <p>C言語教 (以下、本教団といいます。) は、C言語をより多くの方々に知っていただくために、運営しております。</p>
+      <p>また、持続可能な開発目標（SDGs）を支援しています。</p>
+    </div>
+    <h2 class="section-title important">2. 重要事項 (必ずお読みください)</h2>
+    <div class="section-content">
+      <p>本ページ(もしくは関連ページ)の内容は完全に架空のものであり、実在の人物、場所、もしくは団体などを表現や描写する意図はありません。</p>
+      <p>類似が存在した場合はすべて偶然性に起因するものととなります。C言語教が、このページ(もしくは関連ページ)で記載された行為を支持、許容、奨励するものでは一切ございません。</p>
+    </div>
+  </main>
+  <footer class="footer">
+    Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.
+  </footer>
+</body>
+</html>
