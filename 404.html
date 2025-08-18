@@ -1,87 +1,166 @@
 <!DOCTYPE html>
-<html lang="ja" dir="ltr">
+<html lang="ja">
 <head>
-    <link rel="icon" sizes="16x16" href="https://i.imgur.com/z54eEqZ.png">
     <meta charset="UTF-8">
-    <title>404 Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found - C言語教</title>
+    <link rel="icon" href="https://i.imgur.com/z54eEqZ.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
     <style>
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+        :root {
+            --bg-color: #0a0a1a;
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --text-color: #e0e0e0;
+            --card-bg: #1a1a2e;
+            --border-color: #3a3a5e;
+            --font-heading: 'Orbitron', sans-serif;
+            --font-body: 'Noto Sans JP', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-top: 80px;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .container-nav {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo a {
+            color: var(--primary-color);
+            text-decoration: none;
+            text-shadow: 0 0 5px var(--primary-color);
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav ul li {
+            margin-left: 25px;
+        }
+
+        .nav a {
+            color: var(--text-color);
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none !important; 
+        }
+
+        .nav a:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            text-shadow: none;
+            text-decoration: none; 
+        }
+
+        .main-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-top: 100px;
+            color: var(--primary-color);
+            text-shadow: 0 0 5px var(--primary-color);
         }
 
         #path-text {
             animation: rainbowText 0.7s infinite;
         }
+
         @keyframes rainbowText {
-            0% {
-                color: blue;
-            }
-            14% {
-                color: red;
-            }
-            28% {
-                color: yellow;
-            }
-            42% {
-                color: green;
-            }
-            57% {
-                color: purple;
-            }
-            71% {
-                color: orange;
-            }
-            85% {
-                color: indigo;
-            }
-            100% {
-                color: blue;
-            }
+            0% { color: blue; }
+            14% { color: red; }
+            28% { color: yellow; }
+            42% { color: green; }
+            57% { color: purple; }
+            71% { color: orange; }
+            85% { color: indigo; }
+            100% { color: blue; }
+        }
+
+        .footer {
+            background-color: var(--bg-color);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 80px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
         }
     </style>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://cgengokyo.github.io/official-sites/style.css">
 </head>
-<body bgcolor="black">
-<nav class="menu">
-    <ul>
-        <!-- "target="_blank"は無効 -->
-        <li><a href="index.html " target="">ホーム</a></li>
-        <li><a href="overview.html">概要</a></li>
-        <li><a href="notification.html" target="">お知らせ</a></li>
-        <li><a href="aboutus.html" target="">歴史</a></li>
-        <li><a href="shop.html" target="">ショップ</a></li>
-        <li><a href="inquiry.html" target="">お問い合わせ</a></li>
-    </ul>
-</nav>
-<font color="white">
-    <h1 style="text-align:center">404 Not Found</h1>
-    <br>
-    <div id="error-message"></div>
-
-    <script>
-        // ページのURLを取得
-        var currentURL = window.location.href;
-
-        // URLからパス部分を抽出
-        var path = new URL(currentURL).pathname;
-
-        // パスの文字色を変更する要素にIDを追加
-        var pathElement = document.getElementById('error-message');
-        pathElement.innerHTML = '<font face="ＭＳ Ｐ明朝"><h2 style="text-align:center">The requested URL </font><font face="ＭＳ Ｐ明朝" id="path-text">' + path + '</font><font face="ＭＳ Ｐ明朝"> was not found on this server.</font></h2>';
-    </script>
-
-    <br>
-    <br>
-    <div class="copyright" style="padding: 1px; border: 3px solid #333333; border-radius: 10px;"
-         align="center">
-        <footer>
-            <h2 style="text-align:center">
-                <font color="white">
-                    <font face="ＭＳ Ｐ明朝">Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</h2>
-        </footer>
+<body>
+<header class="header">
+    <div class="container-nav">
+        <h1 class="logo"><a href="index.html">C言語教</a></h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="overview.html">概要</a></li>
+                <li><a href="notification.html">お知らせ</a></li>
+                <li><a href="aboutus.html">歴史</a></li>
+                <li><a href="shop.html">ショップ</a></li>
+                <li><a href="inquiry.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
     </div>
+</header>
+<main class="main-container">
+    <h1 class="error-message">404 Not Found</h1>
+    <h2 class="error-message">
+        The requested URL <span id="path-text"></span> was not found on this server.
+    </h2>
+</main>
+<script>
+    var currentURL = window.location.href;
+    var path = new URL(currentURL).pathname;
+    document.getElementById('path-text').textContent = path;
+</script>
+<footer class="footer">
+    Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.
+</footer>
 </body>
 </html>
-
