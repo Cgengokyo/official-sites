@@ -10,228 +10,486 @@
   <link rel="icon" href="https://i.imgur.com/z54eEqZ.png">
   <style>
   :root {
-              --bg-color: #0a0a1a;
-              --primary-color: #00ffff; /* Cyan */
-              --secondary-color: #ff00ff; /* Magenta */
-              --text-color: #e0e0e0;
-              --card-bg: #1a1a2e;
-              --border-color: #3a3a5e;
-              --danger-color: #ff4d4d;
-              --font-heading: 'Orbitron', sans-serif;
-              --font-body: 'Noto Sans JP', sans-serif;
-          }
-  
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-          }
-  
-          html {
-              scroll-behavior: smooth;
-          }
-  
-          body {
-              font-family: var(--font-body);
-              background-color: var(--bg-color);
-              color: var(--text-color);
-              line-height: 1.6;
-              padding-top: 80px; /* For fixed header */
-          }
-  
-          .container {
-              max-width: 800px;
-              margin: 0 auto;
-              padding: 20px;
-          }
-  
-          h1, h2, h3 {
-              font-family: var(--font-heading);
-              color: var(--primary-color);
-              text-shadow: 0 0 5px var(--primary-color);
-          }
-          
-          a {
-              color: var(--secondary-color);
-              text-decoration: none;
-              transition: color 0.3s ease;
-          }
-  
-          a:hover {
-              color: var(--primary-color);
-          }
-  
-          .header {
-              background-color: rgba(10, 10, 26, 0.8);
-              backdrop-filter: blur(10px);
-              padding: 1rem 0;
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100%;
-              z-index: 100;
-              border-bottom: 1px solid var(--border-color);
-          }
-  
-          .header .container-nav {
-              max-width: 1120px;
-              margin: 0 auto;
-              padding: 0 20px;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-          }
-  
-          .logo {
-              font-size: 1.8rem;
-              font-weight: 700;
-          }
-  
-          .logo a {
-              color: var(--primary-color);
-              text-decoration: none;
-          }
-  
-          .nav ul {
-              list-style: none;
-              display: flex;
-          }
-  
-          .nav ul li {
-              margin-left: 25px;
-          }
-  
-          .nav a {
-              color: var(--text-color);
-              font-weight: 700;
-              padding: 5px 10px;
-              border-radius: 5px;
-          }
-  
-          .nav a:hover {
-              background-color: var(--primary-color);
-              color: var(--bg-color);
-              text-shadow: none;
-          }
-  
-          .invoice-card {
-              background-color: var(--card-bg);
-              border: 1px solid var(--border-color);
-              padding: 2.5rem;
-              border-radius: 10px;
-              text-align: center;
-              box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
-              margin-top: 40px;
-          }
-          
-          .invoice-card h1 {
-              font-size: 2.2rem;
-              color: var(--primary-color);
-              margin-bottom: 1rem;
-          }
-  
-          .invoice-card p {
-              font-size: 1.1rem;
-              margin-bottom: 1.5rem;
-          }
-  
-          .invoice-card .highlight {
-              color: var(--danger-color);
-              font-weight: 700;
-              text-shadow: 0 0 8px var(--danger-color);
-              font-size: 1.2em;
-          }
-  
-          #countdown {
-              font-family: var(--font-heading);
-              font-size: 3.5rem;
-              color: var(--danger-color);
-              text-shadow: 0 0 10px var(--danger-color);
-              margin: 1.5rem 0;
-              letter-spacing: 5px;
-          }
-  
-          .progress-bar-container {
-              width: 100%;
-              height: 25px;
-              background-color: #0a0a1a;
-              border: 1px solid var(--border-color);
-              border-radius: 15px;
-              overflow: hidden;
-              margin: 2rem auto;
-          }
-  
-          #progress-bar {
-              height: 100%;
-              width: 100%; /* Starts full */
-              background: linear-gradient(90deg, var(--danger-color) 0%, var(--secondary-color) 100%);
-              border-radius: 15px;
-              transition: width 1s linear; /* Smooth transition */
-          }
-          
-          /* --- Bank Info --- */
-          .bank-info {
-              background-color: #0a0a1a;
-              border: 1px solid var(--border-color);
-              border-radius: 10px;
-              padding: 2rem;
-              margin-top: 2.5rem;
-              text-align: left;
-          }
-  
-          .bank-info h2 {
-              text-align: center;
-              margin-bottom: 1.5rem;
-              color: var(--secondary-color);
-          }
-  
-          .info-row {
-              display: flex;
-              justify-content: space-between;
-              padding: 1rem;
-              border-bottom: 1px solid var(--border-color);
-          }
-          
-          .info-row:last-child {
-              border-bottom: none;
-          }
-  
-          .info-row .label {
-              font-weight: 700;
-              color: var(--text-color);
-              opacity: 0.8;
-          }
-  
-          .info-row .value {
-              font-weight: 700;
-              color: var(--primary-color);
-          }
-          
-          /* --- Contact Link --- */
-          .contact-link {
-              margin-top: 2.5rem;
-              font-size: 1.2rem;
-          }
-  
-          /* --- Footer --- */
-          .footer {
-              background-color: var(--bg-color);
-              text-align: center;
-              padding: 2rem 0;
-              margin-top: 80px;
-              border-top: 1px solid var(--border-color);
-              font-size: 0.9rem;
-          }
+      --bg-color: #0a0a1a;
+      --primary-color: #00ffff;
+      --secondary-color: #ff00ff;
+      --text-color: #e0e0e0;
+      --card-bg: #1a1a2e;
+      --border-color: #3a3a5e;
+      --danger-color: #ff4d4d;
+      --font-heading: 'Orbitron', sans-serif;
+      --font-body: 'Noto Sans JP', sans-serif;
+      --header-height: 72px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding-top: var(--header-height);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      color: var(--primary-color);
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+
+    a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: var(--primary-color);
+    }
+
+    .header {
+      background-color: rgba(10, 10, 26, 0.8);
+      backdrop-filter: blur(10px);
+      padding-top: 16px;
+      padding-bottom: 16px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header .container-nav {
+      max-width: 1120px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28.8px;
+      font-weight: 700;
+      flex: 0 0 auto;
+    }
+
+    .logo a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    .nav ul li {
+      margin-left: 25px;
+    }
+
+    .nav a {
+      color: var(--text-color);
+      font-weight: 700;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    .nav a:hover {
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+      text-shadow: none;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: 12px;
+      outline: none;
+    }
+
+    .invoice-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding-top: 40px;
+      padding-bottom: 40px;
+      padding-left: 40px;
+      padding-right: 40px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255,0,255,0.12);
+      margin-top: 40px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .invoice-card h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+    }
+
+    /* invoice text broken into spans for responsive line-break control */
+    .invoice-text {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      color: var(--text-color);
+      display: inline; /* default inline flow */
+    }
+
+    .invoice-text .line {
+      display: inline; /* each piece inline by default */
+    }
+
+    .invoice-text .highlight {
+      color: var(--danger-color);
+      font-weight: 700;
+      text-shadow: 0 0 8px var(--danger-color);
+      font-size: 1.2em;
+    }
+
+    #countdown {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      color: var(--danger-color);
+      text-shadow: 0 0 10px var(--danger-color);
+      margin-top: 24px;
+      margin-bottom: 24px;
+      letter-spacing: 5px;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 25px;
+      background-color: #0a0a1a;
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      overflow: hidden;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+
+    #progress-bar {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, var(--danger-color) 0%, var(--secondary-color) 100%);
+      border-radius: 15px;
+      transition: width 1s linear;
+    }
+
+    .bank-info {
+      background-color: #0a0a1a;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-top: 40px;
+      text-align: left;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .bank-info h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      color: var(--secondary-color);
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+      gap: 18px;
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-row .label {
+      font-weight: 700;
+      color: var(--text-color);
+      opacity: 0.9;
+      white-space: nowrap;
+    }
+
+    .info-row .value {
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-left: auto;
+    }
+
+    .info-row .value .code {
+      display: block;
+      font-weight: 700;
+      color: var(--text-color);
+      opacity: 0.85;
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .contact-link {
+      margin-top: 24px;
+      font-size: 1.2rem;
+    }
+
+    .contact-link a {
+      display: inline-block;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 22px;
+      padding-right: 22px;
+      border-radius: 999px;  
+      font-weight: 700;  
+      font-family: var(--font-heading);
+      background-color: var(--primary-color);
+      color: var(--bg-color);
+      border: 2px solid var(--primary-color); 
+      text-decoration: none; 
+      transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease; 
+      box-shadow: 0 6px 22px rgba(0,255,255,0.03); 
+      backdrop-filter: blur(2px); 
+      line-height: 1; 
+      vertical-align: middle; 
+      outline: none;
+    }
+
+    .contact-link a:hover {
+      background-color: transparent;
+      color: var(--primary-color);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 60px rgba(0,255,255,0.08);
+    }
+
+    .contact-link a:active {
+      transform: scale(.98);
+    }
+
+    .contact-link a:focus-visible {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    .footer {
+      background-color: var(--bg-color);
+      text-align: center;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      margin-top: 80px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+
+    /* スマホ */
+    @media (max-width: 900px) {
+      .nav ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(10, 10, 26, 0.96);
+        position: fixed;
+        top: var(--header-height);
+        right: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        min-width: 180px;
+      }
+
+      .nav.open ul {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .logo {
+        margin-right: 12px;
+        font-size: 1.3rem;
+      }
+
+      .invoice-card {
+        margin-top: 20px;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+
+      .invoice-text {
+        text-align: center;
+      }
+      .invoice-text .line2 {
+        display: block;
+      }
+      .invoice-text .line4 {
+        display: block;
+      }
+
+      #countdown {
+        font-size: 2.4rem;
+        letter-spacing: 3px;
+      }
+
+      .info-row {
+        gap: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      .info-row .value {
+        margin-left: auto;
+      }
+    }
+
+    /* PC */
+    @media (min-width: 901px) {
+      .invoice-card {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .bank-info {
+        max-width: 490px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 8px;
+        box-shadow: none;
+      }
+
+      /* 各行を grid にして、全体を中央寄せ。ラベルを右寄せ、値は左寄せ */
+      .bank-info .info-row {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        column-gap: 12px;
+        row-gap: 8px;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      .bank-info .info-row .label {
+        justify-self: end;
+        min-width: 240px;
+        white-space: normal;
+      }
+
+      .bank-info .info-row .value {
+        justify-self: start;
+        margin-left: 0;
+      }
+
+      .bank-info .info-row .value .code {
+        margin-top: 2px;
+      }
+
+      /* PCのみで「ご入金が確認できなかった場合、」の前を改行（line3をブロックにする） */
+      .invoice-text .line3 {
+        display: block;
+        margin-top: 6px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      :root {
+        --header-height: 64px;
+      }
+
+      body {
+        padding-top: 64px;
+      }
+
+      .logo {
+        font-size: 1.3rem;
+      }
+
+      .invoice-card h1 {
+        font-size: 1.6rem;
+      }
+
+      #countdown {
+        font-size: 2rem;
+      }
+    }
+
+    .no-outline, .nav a, .nav-toggle, .btn, .btn-primary, .language-box .close-button {
+      outline: none;
+    }
+
+    .nav a:focus-visible, .nav-toggle:focus-visible, button:focus-visible {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 3px;
+    }
+
+    img, iframe {
+      -webkit-user-drag: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
   </style>
 </head>
-
 <body>
-  <header class="header">
+  <header class="header" role="banner">
     <div class="container-nav">
       <h1 class="logo">
         <a href="index.html">C言語教</a>
       </h1>
-      <nav class="nav">
+      <nav class="nav" role="navigation" aria-label="メインナビ">
+        <button class="nav-toggle" aria-expanded="false" aria-label="メニュー">☰</button>
         <ul>
           <li>
             <a href="index.html">ホーム</a>
@@ -251,11 +509,15 @@
   </header>
   <main class="container">
     <div class="invoice-card">
-      <h1>ご登録が正常に完了しました</h1>
-      <p>24時間以内に指定の口座に
-        <span class="highlight">114,514円</span>をご入金下さい。
-        <br>ご入金が確認できなかった場合、
-        <span class="highlight">法的措置</span>をとらせていただく場合が御座います。</p>
+      <h1>ご登録が正常に完了しました。</h1>
+      <p class="invoice-text" aria-live="polite">
+        <span class="line line1">24時間以内に指定の口座に</span>
+        <span class="line line2">
+          <span class="highlight">114,514円</span>をご入金下さい。</span>
+        <span class="line line3">ご入金が確認できなかった場合、</span>
+        <span class="line line4">
+          <span class="highlight">法的措置</span>をとらせていただく場合が御座います。</span>
+      </p>
       <div id="countdown">
         <span id="hours">24</span>:
         <span id="minutes">00</span>:
@@ -268,16 +530,26 @@
       <div class="bank-info">
         <h2>口座情報</h2>
         <div class="info-row">
-          <span class="label">銀行名 (銀行コード)</span>
-          <span class="value">極道銀行 (5910)</span>
+          <span class="label">銀行名
+            <br>
+            <small>(銀行コード)</small>
+          </span>
+          <span class="value">極道銀行
+            <span class="code">(5910)</span>
+          </span>
         </div>
         <div class="info-row">
           <span class="label">種別</span>
           <span class="value">普通預金</span>
         </div>
         <div class="info-row">
-          <span class="label">支店名 (支店コード)</span>
-          <span class="value">八草支店 (893)</span>
+          <span class="label">支店名
+            <br>
+            <small>(支店コード)</small>
+          </span>
+          <span class="value">八草支店
+            <span class="code">(893)</span>
+          </span>
         </div>
         <div class="info-row">
           <span class="label">口座番号</span>
@@ -285,56 +557,92 @@
         </div>
       </div>
       <p class="contact-link">ご不明な点は
-        <a href="inquiry.html">こちら</a>までお問い合わせください。</p>
+        <a href="inquiry.html" class="btn btn-primary" role="button">こちら</a>までお問い合わせください。</p>
     </div>
   </main>
   <footer class="footer">
     <p>Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</p>
   </footer>
   <script>
-  // --- Initial Alert ---
-          window.alert("本ページの内容は完全に架空のものであるため、実際に入金する必要は一切なく、ワンクリック詐欺を防止するためのデモサイトです。\nC言語教が、このページ(もしくは関連のもの)で記載された行為を\n支持、許容、奨励するものでは一切ございません。");
-  
-          // Progress Bar
-          document.addEventListener('DOMContentLoaded', () => {
-              const hoursEl = document.getElementById('hours');
-              const minutesEl = document.getElementById('minutes');
-              const secondsEl = document.getElementById('seconds');
-              const progressBar = document.getElementById('progress-bar');
-  
-              const totalSeconds = 24 * 60 * 60;
-              let secondsLeft = totalSeconds;
-  
-              function updateTimer() {
-                  if (secondsLeft < 0) {
-                      clearInterval(timerInterval);
-                      hoursEl.textContent = '00';
-                      minutesEl.textContent = '00';
-                      secondsEl.textContent = '00';
-                      progressBar.style.width = '0%';
-                      return;
-                  }
-  
-                  const h = Math.floor(secondsLeft / 3600);
-                  const m = Math.floor((secondsLeft % 3600) / 60);
-                  const s = secondsLeft % 60;
-  
-                  hoursEl.textContent = h.toString().padStart(2, '0');
-                  minutesEl.textContent = m.toString().padStart(2, '0');
-                  secondsEl.textContent = s.toString().padStart(2, '0');
-                  
-                  // Update progress bar
-                  const progressPercent = (secondsLeft / totalSeconds) * 100;
-                  progressBar.style.width = `${progressPercent}%`;
-  
-                  secondsLeft--;
-              }
-  
-              updateTimer(); // Initial call
-              const timerInterval = setInterval(updateTimer, 1000);
-          });
+  try {
+      window.addEventListener('touchmove', function(){}, {passive: true});
+      window.addEventListener('wheel', function(){}, {passive: true});
+      window.addEventListener('touchstart', function(){}, {passive: true});
+    } catch(e){}
+
+    (function detectIPad(){
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIPadUA = /\b(iPad)\b/.test(ua);
+      var isIOS13iPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
+      if(isIPadUA || isIOS13iPad) document.documentElement.classList.add('is-ipad');
+    })();
+
+    window.alert("本ページの内容は完全に架空のものであるため、実際に入金する必要は一切なく、ワンクリック詐欺を防止するためのデモサイトです。\nC言語教が、このページ(もしくは関連のもの)で記載された行為を\n支持、許容、奨励するものでは一切ございません.");
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      const progressBar = document.getElementById('progress-bar');
+      const totalSeconds = 24 * 60 * 60;
+      let secondsLeft = totalSeconds;
+      function updateTimer() {
+        if (secondsLeft < 0) {
+          clearInterval(timerInterval);
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          progressBar.style.width = '0%';
+          return;
+        }
+        const h = Math.floor(secondsLeft / 3600);
+        const m = Math.floor((secondsLeft % 3600) / 60);
+        const s = secondsLeft % 60;
+        hoursEl.textContent = h.toString().padStart(2,'0');
+        minutesEl.textContent = m.toString().padStart(2,'0');
+        secondsEl.textContent = s.toString().padStart(2,'0');
+        const progressPercent = (secondsLeft / totalSeconds) * 100;
+        progressBar.style.width = progressPercent + '%';
+        secondsLeft--;
+      }
+      updateTimer();
+      const timerInterval = setInterval(updateTimer, 1000);
+
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if(toggle){
+        toggle.addEventListener('click', function(){
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen ? "true" : "false");
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if(window.innerWidth <= 900){
+          const isInside = e.target.closest('.nav') || e.target.closest('.nav-toggle');
+          if(!isInside && nav.classList.contains('open')){
+            nav.classList.remove('open');
+            if(toggle) toggle.setAttribute('aria-expanded','false');
+          }
+        }
+      }, {passive:true});
+
+      document.addEventListener('contextmenu', function(e){
+        const t = e.target;
+        if(!t) return;
+        const tag = (t.tagName || '').toLowerCase();
+        if(tag === 'img' || tag === 'iframe') e.preventDefault();
+      });
+
+      document.addEventListener('dragstart', function(e){
+        const t = e.target;
+        if(!t) return;
+        if((t.tagName || '').toLowerCase() === 'img') e.preventDefault();
+      });
+    });
+
+    console.log("%cWelcome to our F**kin' Site!", "color: #00ffff; font-size: 1.6rem; font-weight:bold; font-family: 'Orbitron', sans-serif; text-shadow:0 0 10px #00ffff;");
+    console.log("%cいつでも入信お待ちしております。今なら入会金・年会費が￥114514!", "color:#f0f; font-weight:bold; font-size:1rem");
   </script>
 </body>
 </html>
-
-
