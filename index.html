@@ -11,7 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <link rel="manifest" href="app.webmanifest" />
   <style>
     :root {
       --bg-color: #0a0a1a;
@@ -710,6 +710,18 @@
         }
       }
     }, {passive: true});
+
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('/sw-cgengokyo.js', { scope: '/' })
+        .then(function(reg) {
+          console.log('Service worker registered with scope:', reg.scope);
+        }).catch(function(err) {
+          console.error('Service worker registration failed:', err);
+        });
+    });
+  }
   </script>
 </body>
 </html>
