@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>お知らせ - C言語教</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
   <link rel="icon" href="https://i.imgur.com/z54eEqZ.png">
   <style>
     :root {
       --bg-color: #0a0a1a;
-      --primary-color: #00ffff; /* Cyan */
-      --secondary-color: #ff00ff; /* Magenta */
+      --primary-color: #00ffff;
+      --secondary-color: #ff00ff;
       --text-color: #e0e0e0;
       --card-bg: #1a1a2e;
       --border-color: #3a3a5e;
       --font-heading: 'Orbitron', sans-serif;
       --font-body: 'Noto Sans JP', sans-serif;
+      --header-height: 72px;
     }
 
     * {
@@ -26,12 +27,104 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: var(--font-body);
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
-      padding-top: 80px; /* For fixed header */
+      padding-top: var(--header-height);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: rgba(10, 10, 26, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .container-nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      font-family: var(--font-heading);
+    }
+
+    .logo a {
+      color: var(--primary-color);
+      text-decoration: none;
+      text-shadow: 0 0 5px var(--primary-color);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: auto;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .nav ul li {
+      margin: 0;
+    }
+
+    .nav a {
+      color: var(--text-color);
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      display: inline-block;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      background: var(--primary-color);
+      color: var(--bg-color);
+      text-shadow: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 12px;
+      outline: none;
     }
 
     .container {
@@ -49,67 +142,7 @@
       margin-bottom: 2.5rem;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .header {
-      background-color: rgba(10, 10, 26, 0.8);
-      backdrop-filter: blur(10px);
-      padding: 1rem 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .header .container-nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      font-family: var(--font-heading);
-    }
-
-    .logo a {
-      color: var(--primary-color);
-      text-decoration: none;
-      text-shadow: 0 0 5px var(--primary-color);
-    }
-
-    .nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    .nav ul li {
-      margin-left: 25px;
-    }
-
-    .nav a {
-      color: var(--text-color);
-      font-weight: 700;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-      text-decoration: none; /* 下線を削除 */
-    }
-
-    .nav a:hover {
-      background-color: var(--primary-color);
-      color: var(--bg-color);
-      text-shadow: none;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .news-list {
       list-style: none;
@@ -127,6 +160,8 @@
       border-bottom: 1px solid var(--border-color);
       transition: background-color 0.3s ease;
       border-radius: 5px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .news-list li:last-child a {
@@ -160,6 +195,7 @@
     .news-item .title {
       color: var(--text-color);
       font-weight: 500;
+      line-height: 1.35;
     }
 
     .news-item a:hover .title {
@@ -175,85 +211,210 @@
       font-size: 0.9rem;
     }
 
-    @media (max-width: 768px) {
-      .news-item a {
+    .pc-break {
+      display: inline;
+    }
+
+    /* スマホ */
+    @media (max-width: 900px) {
+      :root { --header-height: 68px; }
+      body { padding-top: 68px; }
+
+      .nav ul {
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.75rem;
+        background: rgba(10, 10, 26, 0.96);
+        position: fixed;
+        top: var(--header-height);
+        right: 12px;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        min-width: 180px;
+        gap: 6px;
+      }
+
+      .nav.open ul {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .logo {
+        margin-right: 12px;
+        font-size: 1.3rem;
+      }
+
+      .nav-toggle {
+        margin-left: 8px;
+      }
+
+      .nav.open ul li { margin: 0; }
+      .nav.open ul a {
+        padding: 6px 8px;
+        line-height: 1.2;
+        font-size: 0.98rem;
+        display: block;
+      }
+
+      .pc-break {
+        display: none !important;
+      }
+
+      @media (max-width: 768px) {
+        .news-item a {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+
+        .news-item .date {
+          width: auto;
+        }
+
+        .news-item .category {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @media (min-width: 901px) {
+      .pc-break {
+        display: block;
+        margin-top: 6px;
+      }
+
+      .news-item a {
+        padding: 1.6rem 1rem;
       }
 
       .news-item .date {
-        width: auto;
-      }
-
-      .news-item .category {
-        margin-right: 0;
+        width: 150px;
       }
     }
+
+    @media (max-width: 420px) {
+      :root { --header-height: 64px; }
+      body { padding-top: 64px; }
+      .nav.open ul { right: 8px; min-width: 150px; padding: 8px; gap: 4px; }
+      .nav.open ul a { padding: 5px 8px; font-size: 0.95rem; }
+    }
+
+    .is-ipad .nav ul { display: flex !important; }
+    .is-ipad .nav-toggle { display: none !important; }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="container-nav">
-      <h1 class="logo">
-        <a href="index.html">C言語教</a>
-      </h1>
-      <nav class="nav">
-        <ul>
+      <h1 class="logo"><a href="index.html">C言語教</a></h1>
+
+      <nav class="nav" role="navigation" aria-label="メインナビ">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニュー">☰</button>
+
+        <ul id="site-nav">
           <li><a href="index.html">ホーム</a></li>
           <li><a href="terms.html">利用規約</a></li>
           <li><a href="aboutus.html">歴史</a></li>
-          <li><a href="https://forms.gle/iMDVeavEbXYpAwhn8">お問い合わせ</a></li>
+          <li><a href="https://forms.gle/iMDVeavEbXYpAwhn8" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="container">
+
+  <!-- Main -->
+  <main class="container" role="main">
     <h2>お知らせ一覧</h2>
+
     <ul class="news-list">
       <!-- 新しい記事を一番上に追加 -->
       <li class="news-item">
+        <a href="https://www.instagram.com/cgengokyo_official/" target="_blank" rel="noopener noreferrer">
+          <p class="date">2025/08/20</p>
+          <p class="category"><span>お知らせ</span></p>
+          <p class="title">
+            新しいインスタグラムアカウントを作成しました！
+            <span class="pc-break">(クリックするとフォローできます。)</span>
+          </p>
+        </a>
+      </li>
+
+      <li class="news-item">
         <a href="index.html">
           <p class="date">2025/08/18</p>
-          <p class="category">
-            <span>お知らせ</span>
-          </p>
+          <p class="category"><span>お知らせ</span></p>
           <p class="title">サイトをリニューアルしました！現在、一部改装中です。</p>
         </a>
       </li>
+
       <li class="news-item">
         <a href="https://www.instagram.com/cgengokyo/" target="_blank" rel="noopener noreferrer">
-          <p class="date">2020/08/03</p>
-          <p class="category">
-            <span>お知らせ</span>
+          <p class="date">2023/03/23</p>
+          <p class="category"><span>お知らせ</span></p>
+          <p class="title">
+            <s>インスタグラム始めました！(クリックするとフォローできます。)</s>
+            <span class="pc-break">現在ログインできないため、新しくアカウントを作成しました。</span>
           </p>
-          <p class="title">インスタグラム始めました！(クリックするとフォローできます)</p>
         </a>
       </li>
+
       <li class="news-item">
-        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=412khdko" target="_blank" rel="noopener noreferrer">
-          <p class="date">2020/08/03</p>
-          <p class="category">
-            <span>お知らせ</span>
-          </p>
+        <a href="https://lin.ee/YrpOFLL" target="_blank" rel="noopener noreferrer">
+          <p class="date">2023/03/23</p>
+          <p class="category"><span>お知らせ</span></p>
           <p class="title">公式ライン始めました！(クリックすると友達追加できます)</p>
         </a>
       </li>
+
       <li class="news-item">
         <a href="index.html">
-          <p class="date">2020/08/01</p>
-          <p class="category">
-            <span>お知らせ</span>
-          </p>
+          <p class="date">2023/03/23</p>
+          <p class="category"><span>お知らせ</span></p>
           <p class="title">C言語教のホームページが開設されました！(クリックすると遷移します)</p>
         </a>
       </li>
     </ul>
   </main>
-  <footer class="footer">
+
+  <footer class="footer" role="contentinfo">
     <p>Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+      const siteNav = document.getElementById('site-nav');
+
+      if(!nav || !toggle || !siteNav) return;
+
+      toggle.addEventListener('click', function(){
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      // Close menu when clicking outside (mobile)
+      document.addEventListener('click', function(e){
+        if(window.innerWidth <= 900){
+          if(!e.target.closest('.nav') && !e.target.closest('.nav-toggle')){
+            if(nav.classList.contains('open')){
+              nav.classList.remove('open');
+              toggle.setAttribute('aria-expanded','false');
+            }
+          }
+        }
+      }, {passive:true});
+
+      // iPad detection: show full nav on iPad-like devices
+      try{
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isIPadUA = /\b(iPad)\b/.test(ua);
+        const isIOS13IPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
+        if(isIPadUA || isIOS13IPad) document.documentElement.classList.add('is-ipad');
+      }catch(e){}
+    })();
+  </script>
 </body>
 </html>
-
-
