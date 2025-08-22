@@ -714,7 +714,7 @@
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/sw-cgengokyo.js', { scope: '/' })
+      navigator.serviceWorker.register('/official-sites/sw-cgengokyo.js', { scope: '/' })
         .then(function(reg) {
           console.log('Service worker registered with scope:', reg.scope);
         }).catch(function(err) {
@@ -725,3 +725,4 @@
   </script>
 </body>
 </html>
+
