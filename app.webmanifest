@@ -2,7 +2,7 @@
   "name": "宗教法人 - C言語教 ┃ Official",
   "short_name" : "C言語教",
   "description": "C言語教の公式サイト",
-  "start_url": "/index.html",
+  "start_url": "/official-sites/index.html",
   "display": "standalone",
   "background_color": "#0a0a1a",
   "theme_color": "#00ffff",
