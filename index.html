@@ -539,19 +539,17 @@
   <header class="header" role="banner">
     <div class="container">
       <h1 class="logo"><a href="index.html">C言語教</a></h1>
-
       <nav class="nav" role="navigation" aria-label="メインナビ">
         <button class="nav-toggle" aria-expanded="false" aria-label="メニュー">☰</button>
         <ul>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="terms.html">利用規約</a></li>
           <li><a href="aboutus.html">歴史</a></li>
-          <li><a href="inquiry.html">お問い合わせ</a></li>
+          <li><a href="https://forms.gle/iMDVeavEbXYpAwhn8">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
   <main>
     <section id="home" class="hero">
       <div class="hero-image-container">
@@ -629,7 +627,6 @@
     try {
       window.addEventListener('touchmove', function() {}, {passive: true});
       window.addEventListener('wheel', function() {}, {passive: true});
-      // 追加: touchstart を passive で登録（警告の解消）
       window.addEventListener('touchstart', function() {}, {passive: true});
     } catch (e) {}
 
@@ -642,7 +639,7 @@
       }
     })();
 
-    window.alert("本ページの内容は完全に架空のものであり、実在の人物、場所、\nもしくは団体などを表現や描写する意図はありません。\n類似が存在した場合はすべて偶然性に起因するものととなります。\nC言語教が、このページ(もしくは関連のもの)で記載された行為を\n支持、許容、奨励するものでは一切ございません.");
+    window.alert("本ページの内容は完全に架空のものであり、実在の人物、場所、\nもしくは団体などを表現や描写する意図はありません。\n類似が存在した場合はすべて偶然性に起因するものととなります。\nC言語教が、このページ(もしくは関連のもの)で記載された行為を\n支持、許容、奨励するものでは一切ございません。");
 
     const imageElement = document.getElementById("hero-image");
     const imageArray = [
@@ -714,3 +711,4 @@
   </script>
 </body>
 </html>
+
