@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>利用規約 - C言語教</title>
   <link rel="icon" href="https://i.imgur.com/z54eEqZ.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
-    :root {
+    :root{
       --bg-color: #0a0a1a;
       --primary-color: #00ffff;
       --secondary-color: #ff00ff;
@@ -18,101 +18,141 @@
       --border-color: #3a3a5e;
       --font-heading: 'Orbitron', sans-serif;
       --font-body: 'Noto Sans JP', sans-serif;
+      --header-height: 72px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: var(--font-body);
-      background-color: var(--bg-color);
+      background: var(--bg-color);
       color: var(--text-color);
-      line-height: 1.6;
-      padding-top: 80px; /* fixed header */
+      line-height: 1.7;
+      padding-top: var(--header-height);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
     }
 
     .header {
-      background-color: rgba(10,10,26,0.8);
-      backdrop-filter: blur(10px);
-      padding: 1rem 0;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      background: rgba(10, 10, 26, 0.85);
+      backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border-color);
       z-index: 100;
+      padding: 12px 0;
     }
 
     .container-nav {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 18px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 12px;
     }
 
     .logo {
       font-family: var(--font-heading);
-      font-size: 1.8rem;
       font-weight: 700;
+      font-size: 1.6rem;
+      flex: 0 0 auto;
     }
 
     .logo a {
       color: var(--primary-color);
       text-decoration: none;
-      text-shadow: 0 0 5px var(--primary-color);
+      text-shadow: 0 0 6px var(--primary-color);
+    }
+
+    .nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .nav ul {
       list-style: none;
       display: flex;
+      gap: 16px;
+      align-items: center;
     }
 
     .nav ul li {
-      margin-left: 25px;
+      margin: 0;
     }
 
     .nav a {
       color: var(--text-color);
       font-weight: 700;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
+      padding: 6px 10px;
+      border-radius: 6px;
       text-decoration: none;
+      transition: all .18s ease;
+      display: inline-block;
     }
 
-    .nav a:hover {
-      background-color: var(--primary-color);
+    .nav a:hover,
+    .nav a:focus {
+      background: var(--primary-color);
       color: var(--bg-color);
       text-shadow: none;
     }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      margin-left: 12px;
+      outline: none;
     }
 
-    h1, h2 {
-      font-family: var(--font-heading);
-      margin-bottom: 1rem;
+    .container {
+      max-width: 920px;
+      margin: 44px auto 80px;
+      padding: 0 18px;
     }
 
     h1.section-title {
+      font-family: var(--font-heading);
       color: var(--primary-color);
-      text-shadow: 0 0 5px var(--primary-color);
-      margin-top: 2rem;
+      text-shadow: 0 0 6px var(--primary-color);
       font-size: 2rem;
+      margin-bottom: 18px;
+    }
+
+    h2.section-sub {
+      font-family: var(--font-heading);
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--primary-color);
+      font-size: 1.25rem;
     }
 
     .section-content p {
       color: var(--text-color);
       font-size: 1rem;
-      margin: 0.5rem 0 1rem 0;
+      margin-bottom: 12px;
     }
 
     .important {
@@ -120,54 +160,212 @@
       font-weight: 700;
     }
 
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 6px 24px rgba(0, 255, 255, 0.04);
+    }
+
     .footer {
-      background-color: var(--bg-color);
+      background: var(--bg-color);
       text-align: center;
-      padding: 2rem 0;
-      margin-top: 80px;
+      padding: 28px 0;
       border-top: 1px solid var(--border-color);
       font-size: 0.9rem;
+      margin-top: 40px;
     }
+
+    .muted {
+      opacity: 0.8;
+      font-size: 0.95rem; }
+
+    a:focus-visible {
+      outline: 2px dashed var(--primary-color);
+      outline-offset: 3px; }
+
+    /* スマホ */
+    @media (max-width: 900px) {
+      :root { --header-height: 68px; }
+      body { padding-top: 68px; }
+
+      .nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+      }
+
+      .nav-toggle { display: flex; }
+
+      .nav.open ul {
+        display: flex;
+        position: fixed;
+        right: 12px;
+        gap: 6px;
+        padding: 8px;
+        top: var(--header-height);
+        background: rgba(10, 10, 26, 0.98);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        min-width: 180px;
+        z-index: 120;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      }
+
+      .nav.open ul li { margin-left: 0; }
+
+      .nav.open ul a {
+        padding: 6px 8px;
+        line-height: 1.2;
+        font-size: 0.98rem;
+        display: block;
+      }
+
+      .container { margin: 26px auto 60px; }
+      .logo { font-size: 1.2rem; }
+      .section-content p { font-size: 0.98rem; }
+    }
+
+    @media (max-width: 420px) {
+      :root { --header-height: 64px; }
+      body { padding-top: 64px; }
+
+      .container { margin: 18px auto 40px; padding: 0 14px; }
+      h1.section-title { font-size: 1.6rem; }
+      h2.section-sub { font-size: 1.05rem; }
+
+      .nav.open ul {
+        right: 8px;
+        min-width: 150px;
+        padding: 6px;
+        gap: 4px;
+      }
+
+      .nav.open ul a {
+        padding: 5px 8px;
+        font-size: 0.95rem;
+      }
+
+      .section-content p {
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+    }
+
+    /* iPad向け */
+    .is-ipad .nav ul { display: flex !important; }
+    .is-ipad .nav-toggle { display: none !important; }
   </style>
-  <script>
-    window.onload = function() {
-      alert("本ページの内容は完全に架空のものであり、実在の人物、場所、\nもしくは団体などを表現や描写する意図はありません。\n類似が存在した場合はすべて偶然性に起因するものととなります。\nC言語教が、このページ(もしくは関連のもの)で記載された行為を\n支持、許容、奨励するものでは一切ございません。");
-    }
-  </script>
 </head>
 <body>
-  <header class="header">
+  <header class="header" role="banner">
     <div class="container-nav">
-      <h1 class="logo">
-        <a href="index.html">C言語教</a>
-      </h1>
-      <nav class="nav">
-        <ul>
+      <h1 class="logo"><a href="index.html">C言語教</a></h1>
+      <nav class="nav" role="navigation" aria-label="メインナビ">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニュー">☰</button>
+        <ul id="site-nav">
           <li><a href="index.html">ホーム</a></li>
           <li><a href="terms.html">利用規約</a></li>
           <li><a href="notification.html">お知らせ</a></li>
           <li><a href="aboutus.html">歴史</a></li>
-          <li><a href="shop.html">ショップ</a></li>
-          <li><a href="inquiry.html">お問い合わせ</a></li>
+          <li><a href="https://forms.gle/iMDVeavEbXYpAwhn8">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main class="container">
-    <h1 class="section-title">利用規約</h1>
-    <h2 class="section-title important">1. 意図 / 目的</h2>
-    <div class="section-content">
-      <p>C言語教 (以下、本教団といいます。) は、C言語をより多くの方々に知っていただくために、運営しております。</p>
-      <p>また、持続可能な開発目標（SDGs）を支援しています。</p>
-    </div>
-    <h2 class="section-title important">2. 重要事項 (必ずお読みください)</h2>
-    <div class="section-content">
-      <p>本ページ(もしくは関連ページ)の内容は完全に架空のものであり、実在の人物、場所、もしくは団体などを表現や描写する意図はありません。</p>
-      <p>類似が存在した場合はすべて偶然性に起因するものととなります。C言語教が、このページ(もしくは関連ページ)で記載された行為を支持、許容、奨励するものでは一切ございません。</p>
-    </div>
+  <main class="container" id="main">
+    <article class="card" aria-labelledby="terms-title">
+      <h1 id="terms-title" class="section-title">利用規約</h1>
+      <h2 class="section-sub">1. 適用</h2>
+      <div class="section-content">
+        <p>
+          本利用規約（以下「本規約」）は、当サイト「C言語教」（以下「当サイト」）の利用条件を定めるものです。
+          ユーザーは本規約に同意した上で当サイトを利用するものとします。
+        </p>
+      </div>
+      <h2 class="section-sub">2. サービス内容と免責</h2>
+      <div class="section-content">
+        <p>
+          当サイトは宗教団体C言語教に関する情報を提供するサイトです。
+        </p>
+        <p>
+          当サイトの利用により生じた損害について、当サイト運営は一切の責任を負いかねます。
+        </p>
+      </div>
+      <h2 class="section-sub important">3. 実際の支払い（重要）</h2>
+      <div class="section-content">
+        <p>
+          <strong>※本ページの内容は完全に架空のものであり、実際にご入金の必要は一切ございません。</strong>
+        </p>
+      </div>
+      <h2 class="section-sub">4. プライバシー</h2>
+      <div class="section-content">
+        <p>
+          当サイトが収集する個人情報は、お問い合わせ対応やサービス改善のために使用します。
+          個人情報の取扱いは別途「プライバシーポリシー」に記載します。
+        </p>
+      </div>
+      <h2 class="section-sub">5. 禁止事項</h2>
+      <div class="section-content">
+        <p>以下の行為を禁止します（例示）：</p>
+        <ul style="margin-left:1rem; margin-bottom:12px; color:var(--text-color)">
+          <li>当サイトの不正利用、サービス妨害行為</li>
+          <li>他者の権利を侵害する行為（著作権侵害等）</li>
+          <li>違法行為やそれを助長する行為</li>
+        </ul>
+      </div>
+      <h2 class="section-sub">6. 規約の変更</h2>
+      <div class="section-content">
+        <p>
+          本規約は予告なく変更されることがあります。重要な変更がある場合は当サイト上で通知します。
+        </p>
+      </div>
+      <h2 class="section-sub">7. 準拠法・管轄</h2>
+      <div class="section-content">
+        <p>
+          本規約は日本法に準拠し、本規約に関する紛争は東京地方裁判所を第一審の専属的合意管轄裁判所とします。
+        </p>
+      </div>
+    </article>
   </main>
-  <footer class="footer">
-    Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.
+  <footer class="footer" role="contentinfo">
+    <div class="container" style="max-width:1120px;">
+      <p>Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</p>
+    </div>
   </footer>
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+
+      if(!nav || !toggle) return;
+
+      toggle.addEventListener('click', function(e){
+        const isOpen = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+
+      document.addEventListener('click', function(e){
+        if(window.innerWidth <= 900){
+          if(!e.target.closest('.nav') && !e.target.closest('.nav-toggle')){
+            if(nav.classList.contains('open')){
+              nav.classList.remove('open');
+              toggle.setAttribute('aria-expanded','false');
+            }
+          }
+        }
+      }, {passive:true});
+
+      // iPad判定
+      try{
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isIPadUA = /\b(iPad)\b/.test(ua);
+        const isIOS13IPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
+        if(isIPadUA || isIOS13IPad) document.documentElement.classList.add('is-ipad');
+      }catch(e){}
+    })();
+  </script>
 </body>
 </html>
