@@ -713,16 +713,17 @@
 
 
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('/official-sites/sw-cgengokyo.js', { scope: '/' })
-        .then(function(reg) {
-          console.log('Service worker registered with scope:', reg.scope);
-        }).catch(function(err) {
-          console.error('Service worker registration failed:', err);
-        });
-    });
-  }
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/official-sites/sw-cgengokyo.js', { scope: '/official-sites/' })
+      .then(function(reg) {
+        console.log('Service worker registered with scope:', reg.scope);
+      }).catch(function(err) {
+        console.error('Service worker registration failed:', err);
+      });
+  });
+}
   </script>
 </body>
 </html>
+
 
