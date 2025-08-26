@@ -1,169 +1,413 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found - C言語教</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="manifest" href="site.webmanifest" />
-    <style>
-        :root {
-            --bg-color: #0a0a1a;
-            --primary-color: #00ffff;
-            --secondary-color: #ff00ff;
-            --text-color: #e0e0e0;
-            --card-bg: #1a1a2e;
-            --border-color: #3a3a5e;
-            --font-heading: 'Orbitron', sans-serif;
-            --font-body: 'Noto Sans JP', sans-serif;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 Not Found - C言語教</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <style>
+  :root {
+    --bg-color: #0a0a1a;
+    --primary-color: #00ffff;
+    --primary-glow: rgba(0,255,255,0.12);
+    --secondary-color: #ff00ff;
+    --text-color: #e0e0e0;
+    --card-bg: #1a1a2e;
+    --border-color: #3a3a5e;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+    --header-height: 72px;
+  }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            padding-top: 80px;
-            line-height: 1.6;
-        }
+  html {
+    scroll-behavior: smooth;
+  }
 
-        .header {
-            background-color: rgba(10, 10, 26, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-        }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    padding-top: var(--header-height);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
 
-        .container-nav {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 26, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 100;
+    padding: 12px 0;
+  }
 
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
+  .container-nav {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-        .logo a {
-            color: var(--primary-color);
-            text-decoration: none;
-            text-shadow: 0 0 5px var(--primary-color);
-        }
+  .logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.6rem;
+    flex: 0 0 auto;
+  }
 
-        .nav ul {
-            list-style: none;
-            display: flex;
-        }
+  .logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: 0 0 6px var(--primary-color);
+  }
 
-        .nav ul li {
-            margin-left: 25px;
-        }
+  .nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-        .nav a {
-            color: var(--text-color);
-            font-weight: 700;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-            text-decoration: none !important; 
-        }
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
 
-        .nav a:hover {
-            background-color: var(--primary-color);
-            color: var(--bg-color);
-            text-shadow: none;
-            text-decoration: none; 
-        }
+  .nav ul li {
+    margin: 0;
+  }
 
-        .main-container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
+  .nav a {
+    color: var(--text-color);
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all .18s ease;
+    display: inline-block;
+  }
 
-        .error-message {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            margin-top: 100px;
-            color: var(--primary-color);
-            text-shadow: 0 0 5px var(--primary-color);
-        }
+  .nav a:hover,
+  .nav a:focus {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    text-shadow: none;
+  }
 
-        #path-text {
-            animation: rainbowText 0.7s infinite;
-        }
+  .nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-left: 12px;
+    outline: none;
+  }
 
-        @keyframes rainbowText {
-            0% { color: blue; }
-            14% { color: red; }
-            28% { color: yellow; }
-            42% { color: green; }
-            57% { color: purple; }
-            71% { color: orange; }
-            85% { color: indigo; }
-            100% { color: blue; }
-        }
+  .container {
+    max-width: 920px;
+    margin: 44px auto 80px;
+    padding: 0 18px;
+  }
 
-        .footer {
-            background-color: var(--bg-color);
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 80px;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.9rem;
-        }
-    </style>
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 24px rgba(0, 255, 255, 0.04);
+  }
+
+  .error-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+  }
+
+  .error-404 .headline {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-shadow: 0 0 6px var(--primary-color);
+    font-size: 2rem;
+  }
+
+  .error-404 .message {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    text-shadow: 0 0 6px var(--primary-color);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    max-width: 100%;
+  }
+
+  .error-404 .message-text,
+  .error-404 #path-text {
+    display: block;
+    line-height: 1.2;
+  }
+
+  #path-text {
+    font-weight: 700;
+    padding: 0 6px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    animation-name: rainbowGlow;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes rainbowGlow {
+    0%   { color: #ff4d4d; text-shadow: 0 0 7px #ff4d4d; }
+    10%  { color: #ff8a33; text-shadow: 0 0 7px #ff8a33; }
+    20%  { color: #ffd24d; text-shadow: 0 0 7px #ffd24d; }
+    30%  { color: #9dff4d; text-shadow: 0 0 7px #9dff4d; }
+    40%  { color: #4cd97b; text-shadow: 0 0 7px #4cd97b; }
+    50%  { color: #4dd8ff; text-shadow: 0 0 7px #4dd8ff; }
+    60%  { color: #00bfff; text-shadow: 0 0 7px #00bfff; }
+    70%  { color: #4d73ff; text-shadow: 0 0 7px #4d73ff; }
+    80%  { color: #b86bff; text-shadow: 0 0 7px #b86bff; }
+    90%  { color: #ff6bf2; text-shadow: 0 0 7px #ff6bf2; }
+    100% { color: #ff4d4d; text-shadow: 0 0 7px #ff4d4d; }
+  }
+
+  .footer {
+    background: var(--bg-color);
+    text-align: center;
+    padding: 28px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    margin-top: 40px;
+  }
+
+  a:focus-visible {
+    outline: 2px dashed var(--primary-color);
+    outline-offset: 3px;
+  }
+
+  /* スマホ */
+  @media (max-width: 900px) {
+    :root {
+      --header-height: 68px;
+    }
+
+    body {
+      padding-top: 68px;
+    }
+
+    .nav ul {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      padding: 12px;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav.open ul {
+      display: flex;
+      position: fixed;
+      right: 12px;
+      gap: 6px;
+      padding: 8px;
+      top: var(--header-height);
+      background: rgba(10, 10, 26, 0.98);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      min-width: 180px;
+      z-index: 120;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav.open ul li {
+      margin-left: 0;
+    }
+
+    .nav.open ul a {
+      padding: 6px 8px;
+      line-height: 1.2;
+      font-size: 0.98rem;
+      display: block;
+    }
+
+    .container {
+      margin: 26px auto 60px;
+    }
+
+    .card {
+      padding: 16px;
+    }
+
+    .error-404 .headline {
+      font-size: 1.6rem;
+    }
+
+    .error-404 .message {
+      font-size: 0.98rem;
+    }
+
+    .logo {
+      margin-right: 12px;
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    :root {
+      --header-height: 64px;
+    }
+
+    body {
+      padding-top: 64px;
+    }
+
+    .container {
+      margin: 18px auto 40px;
+      padding: 0 14px;
+    }
+
+    .error-404 .headline {
+      font-size: 1.4rem;
+    }
+
+    .error-404 .message {
+      font-size: 0.98rem;
+      line-height: 1.6;
+    }
+
+    .nav.open ul {
+      right: 8px;
+      min-width: 150px;
+      padding: 6px;
+      gap: 4px;
+    }
+
+    .nav.open ul a {
+      padding: 5px 8px;
+      font-size: 0.95rem;
+    }
+  }
+
+  .is-ipad .nav ul {
+    display: flex !important;
+  }
+
+  .is-ipad .nav-toggle {
+    display: none !important;
+  }
+  </style>
 </head>
 <body>
-<header class="header">
+  <header class="header" role="banner">
     <div class="container-nav">
-        <h1 class="logo"><a href="index.html">C言語教</a></h1>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">ホーム</a></li>
-                <li><a href="terms.html">利用規約</a></li>
-                <li><a href="notification.html">お知らせ</a></li>
-                <li><a href="aboutus.html">歴史</a></li>
-                <li><a href="https://forms.gle/iMDVeavEbXYpAwhn8">お問い合わせ</a></li>
-            </ul>
-        </nav>
+      <h1 class="logo"><a href="index.html">C言語教</a></h1>
+      <nav class="nav" role="navigation" aria-label="メインナビ">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="メニュー">☰</button>
+        <ul id="site-nav">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="notification.html">お知らせ</a></li>
+          <li><a href="aboutus.html">歴史</a></li>
+          <li><a href="https://forms.gle/iMDVeavEbXYpAwhn8" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
+        </ul>
+      </nav>
     </div>
-</header>
-<main class="main-container">
-    <h1 class="error-message">404 Not Found</h1>
-    <h2 class="error-message">
-        The requested URL <span id="path-text"></span> was not found on this server.
-    </h2>
-</main>
-<script>
-    var currentURL = window.location.href;
-    var path = new URL(currentURL).pathname;
-    document.getElementById('path-text').textContent = path;
-</script>
-<footer class="footer">
-    Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.
-</footer>
+  </header>
+  <main class="container" id="main" role="main">
+    <article class="card" aria-labelledby="error-title">
+      <div class="error-404">
+        <h1 id="error-title" class="headline">404 Not Found</h1>
+        <p class="message" id="message-line">
+          <span class="message-text">The requested URL</span>
+          <span id="path-text" aria-live="polite"></span>
+          <span class="message-text">was not found on this server.</span>
+        </p>
+      </div>
+    </article>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container" style="max-width:1120px;">
+      <p>Copyright © B.C 114514 Cgengokyo Inc. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (nav && toggle) {
+        toggle.addEventListener('click', function(){
+          const isOpen = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+
+      document.addEventListener('click', function(e){
+        if (window.innerWidth <= 900) {
+          if (!e.target.closest('.nav') && !e.target.closest('.nav-toggle')) {
+            if (nav.classList.contains('open')) {
+              nav.classList.remove('open');
+              if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        }
+      }, {passive: true});
+
+      try {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        const isIPadUA = /\b(iPad)\b/.test(ua);
+        const isIOS13iPad = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
+        if (isIPadUA || isIOS13iPad) {
+          document.documentElement.classList.add('is-ipad');
+        }
+      } catch (e) {
+      }
+
+      try {
+        const currentURL = window.location.href;
+        const path = new URL(currentURL).pathname + (new URL(currentURL).search || '') + (new URL(currentURL).hash || '');
+        const pathTextEl = document.getElementById('path-text');
+        if (pathTextEl) pathTextEl.textContent = path;
+      } catch (e) {
+      }
+    })();
+  </script>
 </body>
 </html>
